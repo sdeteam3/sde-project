@@ -10,7 +10,7 @@ import { NavigateBeforeSharp } from '@mui/icons-material';
 
 function NavBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} id="navbar">
       <AppBar position="static">
         <Toolbar>
           <IconButton
