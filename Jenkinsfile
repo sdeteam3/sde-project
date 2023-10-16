@@ -10,6 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '''#!/bin/bash
+rm -rf ./*
 git clone \'https://github.com/sdeteam3/sde-project\'
 cd sde-project/src
 npm install
