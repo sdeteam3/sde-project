@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import App from '../App';
+import App from './App';
 import React from 'react';
-import NavBar from '../NavBar.js';
-import ImageList from '../ImageList.js';
-import Bottom from '../Bottom.js';
+import NavBar from './NavBar.js';
+import ImageList from './ImageList.js';
+import Bottom from './Bottom.js';
 
 const itemData = [
   {
