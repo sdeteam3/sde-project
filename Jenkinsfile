@@ -4,7 +4,6 @@ pipeline {
     stage('Build') {
       steps {
         git(url: 'https://github.com/sdeteam3/sde-project', branch: 'main', poll: true)
-        build 'build'
         sh 'npm install'
       }
     }
