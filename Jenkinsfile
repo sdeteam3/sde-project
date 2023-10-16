@@ -1,30 +1,27 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        build 'build'
-      }
+    agent any
+    tools {
+        nodejs 'test'
     }
+    stages {
+        stage('Build') {
+            steps {
+                git(url: 'https://github.com/TheBigFatBear/deployment.git', branch: 'main', poll: true)
+                build 'build'
+                sh 'npm install'
+            }
+        }
 
-    stage('Test') {
-      steps {
-        sh '''#!/bin/bash
-rm -rf *
-git clone \'https://github.com/sdeteam3/sde-project\'
-cd sde-project/src
-npm install
-npm test
-'''
-      }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+
+        stage('Deployment') {
+            steps {
+                sh 'npm start'
+            }
+        }
     }
-
-    stage('Deploy') {
-      steps {
-        sh '''#!/bin/bash
-send to production server'''
-      }
-    }
-
-  }
 }
