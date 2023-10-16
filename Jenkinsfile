@@ -14,7 +14,7 @@ git clone \'https://github.com/sdeteam3/sde-project\'
 cd sde-project/src
 npm install
 npm test
-a'''
+'''
       }
     }
 
